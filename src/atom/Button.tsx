@@ -5,13 +5,14 @@ const Button: React.FC<ButtonProps> = ({
     buttonClassName,
     containerClassName,
     icon,
-    children,
+    label,
+    handleClick,
 }) => {
     return (
         <span className={containerClassName}>
-            {icon}
-            <button className={buttonClassName}>
-                {children || 'Button'}
+            {icon ?? icon}
+            <button className={buttonClassName} type="button" onClick={handleClick}>
+                {label ?? label}
             </button>
         </span>
     );

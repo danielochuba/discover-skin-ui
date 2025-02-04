@@ -1,7 +1,42 @@
 {
   "files": [],
+  "compilerOptions": {
+    "baseUrl": "src",
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable", "WebWorker"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "checkJs": true,
+    "jsx": "react-jsx",
+    "forceConsistentCasingInFileNames": true,
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "@/*": ["./*", "./src/molecules/*.tsx"]
+    },
+    "types": ["vite/client"]
+  },
+    "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "src/main.tsx",
+    "src/utils/generateSitemap.js",
+    "src/config/routes.js"
+  ],
+  "exclude": ["node_modules"],
   "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
+    {
+      "path": "./tsconfig.node.json"
+    }
   ]
 }

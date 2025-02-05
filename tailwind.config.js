@@ -9,6 +9,7 @@ export default {
         fontBlue: "#4C5F7D",
         lightGreen: "#4fe7ba",
         hoverGreen: "#EFFAF5",
+        scale: "#333333"
       },
       keyframes: {
         shimmer: {

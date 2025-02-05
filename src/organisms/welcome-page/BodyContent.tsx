@@ -4,6 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import { IoLogoFacebook } from "react-icons/io5";
 import welcomeLogo from '@/assets/images/welcome-logo.png'
 import AuthPage from '@/template/auth';
+import ContinueAsGuest from '@/molecules/welcome-page/ContinueAsGuest';
 
 
 function BodyContent() {
@@ -16,7 +17,7 @@ function BodyContent() {
   return (
     <main>
       <div className="relative w-full h-screen bg-cover bg-center flex items-center justify-center " >
-
+        <div className='z-50'><ContinueAsGuest /></div>
         <div className="px-6 mt-[80%] rounded-lg text-center w-11/12 max-w-md text-white">
           <span>
             <img src={welcomeLogo} alt="Discover St. Kitts & Nevis" className="mx-auto w-28" />

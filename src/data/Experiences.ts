@@ -6,7 +6,7 @@ const experiences = [
         ratings: 4.8,
         numberOfRatings: 120,
         location: 'Paris, France',
-        title: 'Eiffel Tower Guided Tour',
+        title: 'Eiffel Tower Tour',
         price: '45',
     },
     {
@@ -15,7 +15,7 @@ const experiences = [
         ratings: 4.7,
         numberOfRatings: 98,
         location: 'Bali, Indonesia',
-        title: 'Jungle Trekking Adventure',
+        title: 'Jungle Trekking ',
         price: '60',
     },
     {
@@ -24,7 +24,7 @@ const experiences = [
         ratings: 4.9,
         numberOfRatings: 200,
         location: 'Maldives',
-        title: 'Snorkeling with Manta Rays',
+        title: 'Snorkeling Rays',
         price: '75',
     },
     {
@@ -33,7 +33,7 @@ const experiences = [
         ratings: 4.6,
         numberOfRatings: 150,
         location: 'New York, USA',
-        title: 'Street Food Tasting Tour',
+        title: 'Street Food Tour',
         price: '50',
     },
     {
@@ -42,7 +42,7 @@ const experiences = [
         ratings: 4.9,
         numberOfRatings: 180,
         location: 'Dubai, UAE',
-        title: 'Skydiving Over Palm Jumeirah',
+        title: 'Skydiving Over ',
         price: '250',
     },
     {
@@ -51,7 +51,7 @@ const experiences = [
         ratings: 4.8,
         numberOfRatings: 130,
         location: 'Rome, Italy',
-        title: 'Historical Walking Tour',
+        title: 'Historical Tour',
         price: '40',
     },
 ];

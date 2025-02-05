@@ -28,8 +28,8 @@ const BookingsCard: React.FC<BookingsCardProps> = ({
 
             <span className={`${badgeClassName} text-secondary`}><FaClock className='' /> Starts in 2 days</span>
             <div className={`${contentClassName}`}>
-                <h3 className="text-lg font-semibold">{location}</h3>
-                <h2 className="text-2xl font-bold">{title}</h2>
+                <h3 className="text-[12px] ">{location}</h3>
+                <h2 className="text-[16px] font-bold">{title}</h2>
                 <p className="text-sm">{time}</p>
             </div>
         </div>

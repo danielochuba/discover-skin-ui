@@ -1,12 +1,6 @@
 import { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
-
-// Validation Schema
-const validationSchema = Yup.object({
-    email: Yup.string().email("Invalid email address").required("Email is required"),
-    password: Yup.string().required("Password is required"),
-});
+import { LogInValidationSchema } from "@/validations/LogInForm";
 
 const LogInForm = () => {
     const [passwordVisible, setPasswordVisible] = useState(false);
@@ -22,7 +16,7 @@ const LogInForm = () => {
 
     return (
         <>
-            <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
+            <Formik initialValues={initialValues} validationSchema={LogInValidationSchema} onSubmit={handleSubmit}>
                 {({ isSubmitting }) => (
                     <Form className="mt-4 space-y-4">
                         {/* Email Address */}

@@ -31,8 +31,8 @@
     "**/*.tsx",
     "src/main.tsx",
     "src/utils/generateSitemap.js",
-    "src/config/routes.js"
-  ],
+    "src/config/routes.tsx"
+, "src/pages/auth/route.js"  ],
   "exclude": ["node_modules"],
   "references": [
     {

@@ -3,8 +3,16 @@ import React from 'react'
 import { FcGoogle } from "react-icons/fc";
 import { IoLogoFacebook } from "react-icons/io5";
 import welcomeLogo from '@/assets/images/welcome-logo.png'
+import AuthPage from '@/template/auth';
+
 
 function BodyContent() {
+  const [isAuthPageOpen, setIsAuthPageOpen] = React.useState(false)
+
+  const handleEmailAuthentication = () => {
+    console.log('Email Authentication')
+    setIsAuthPageOpen(true)
+  }
   return (
     <main>
       <div className="relative w-full h-screen bg-cover bg-center flex items-center justify-center " >
@@ -32,6 +40,7 @@ function BodyContent() {
 
             <Button
               label="Continue with Email"
+              handleClick={handleEmailAuthentication}
               containerClassName="w-full flex items-center justify-center bg-gray-500 bg-opacity-50 py-2 rounded-full py-2"
               buttonClassName="bg-transparent text-white text-sm"
             />
@@ -42,8 +51,13 @@ function BodyContent() {
           </p>
         </div>
       </div>
+      {/*  Auth Page */}
+      {isAuthPageOpen &&
+        <AuthPage onClose={() => setIsAuthPageOpen(false)} />
+      }
     </main>
   )
 }
 
 export default BodyContent
+

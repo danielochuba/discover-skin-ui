@@ -2,13 +2,14 @@ import Button from '@/atom/Button'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { FaUserLarge } from "react-icons/fa6";
+import ApplicationRoutes from '@/config/routes';
 
 const ContinueAsGuest: React.FC = () => {
 
     const navigate = useNavigate()
     const handleClick = () => {
         console.log('Continue as guest')
-        navigate('/home')
+        navigate(ApplicationRoutes.HOME)
     }
     return (
 

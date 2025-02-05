@@ -6,6 +6,7 @@ const ApplicationRoutes = {
         REGISTER: 'auth/register',
         PROFILE: 'user/profile',
         LOGOUT: 'auth/logout',
+        DASHBOARD: 'dashboard',
     },
 }
 

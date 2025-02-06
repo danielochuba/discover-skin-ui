@@ -9,7 +9,7 @@ const ExperiencesList: React.FC = () => {
     return (
         <div className="">
             {/* Horizontal Scrollable Container */}
-            <div className="flex overflow-x-auto space-x-2 scrollbar-hide">
+            <div className="flex overflow-x-auto space-x-2 scrollbar-hidden">
                 {experiences.map((experience) => (
                     <div key={experience.id} className="flex-shrink-0 ">
                         <Link to={ApplicationRoutes.EXPERIENCES.DETAIL.replace(':id', experience.id.toString())}>

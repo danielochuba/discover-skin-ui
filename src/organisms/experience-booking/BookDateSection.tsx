@@ -1,10 +1,15 @@
 import SelectDate from '@/molecules/experience-booking/SelectDate';
 import React from 'react';
 
-const BookDateSection: React.FC = () => {
+interface BookDateSectionProps {
+    step: number;
+    setStep: React.Dispatch<React.SetStateAction<number>>;
+}
+
+const BookDateSection: React.FC<BookDateSectionProps> = ({ setStep, step }) => {
     return (
 
-        <SelectDate />
+        <SelectDate step={step} setStep={setStep} />
     );
 };
 

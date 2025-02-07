@@ -21,7 +21,7 @@ const PaymentMethods = () => {
                 {paymentOptions.map((option) => (
                     <div
                         key={option.id}
-                        className="flex items-center justify-between p-4  cursor-pointer hover:bg-gray-100"
+                        className="flex items-center justify-between py-4 px-0  cursor-pointer hover:bg-gray-100"
                     >
                         <div className="flex items-center gap-3">
                             <span className="text-xl">{option.icon}</span>

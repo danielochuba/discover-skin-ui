@@ -16,6 +16,8 @@ const ExperienceBookingPage: React.FC = () => {
     useEffect(() => {
         goToTop();
     }, []);
+
+
     return (
         <div className="">
             <ContentModal className="!px-2 relative !overflow-y-auto" containerClassName='h-full ' onClose={step === 1 ? () => { navigate(-1) } : undefined}>
@@ -26,15 +28,15 @@ const ExperienceBookingPage: React.FC = () => {
 
                 {/* Step 1 */}
                 {step === 1 && (
-                    <div className='overflow-y-auto h-[80vh] scrollbar-hidden'>
-                        <BookDateSection />
+                    <div className='overflow-y-auto h-[90vh] scrollbar-hidden'>
+                        <BookDateSection step={step} setStep={setStep} />
                     </div>
                 )}
 
 
                 {/* Step 2 */}
                 {step === 2 && (
-                    <div className=' h-[75vh] w-full flex flex-col'>
+                    <div className=' h-[65vh] w-full flex flex-col'>
                         <SelectPeopleSection />
                         <button
                             onClick={() => setStep((prev) => Math.min(prev + 1, 4))}
@@ -70,7 +72,7 @@ const ExperienceBookingPage: React.FC = () => {
                 )}
 
 
-                <button
+                {/* <button
                     onClick={() => setStep((prev) => Math.max(prev - 1, 1))}
                     className="px-4 py-2 bg-gray-400 text-white rounded"
                 >
@@ -81,7 +83,7 @@ const ExperienceBookingPage: React.FC = () => {
                     className="px-4 py-2 bg-teal-500 text-white rounded"
                 >
                     Next
-                </button>
+                </button> */}
             </ContentModal>
         </div>
 

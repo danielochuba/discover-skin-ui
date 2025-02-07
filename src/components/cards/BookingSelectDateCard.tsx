@@ -11,10 +11,22 @@ interface BookingSelectDateCardProps {
             price: number;
             spotsLeft: number;
         }[]
-    }
+    },
+    step: number;
+    setStep: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const BookingSelectDateCard: React.FC<BookingSelectDateCardProps> = ({ slot }) => {
+const BookingSelectDateCard: React.FC<BookingSelectDateCardProps> = ({ slot, setStep }) => {
+    interface Slot {
+        time: string;
+        price: number;
+        spotsLeft: number;
+    }
+
+    const handleDateSelect = (slot: Slot) => {
+        console.log(slot);
+        setStep((prev) => Math.min(prev + 1, 4));
+    }
     return (
         <div className="flex  py-4 rounded-lg mb-4 gap-2 ">
             <div className="flex flex-col items-center bg-gray-200 p-2 pt-1 rounded-md h-fit">
@@ -36,7 +48,7 @@ const BookingSelectDateCard: React.FC<BookingSelectDateCardProps> = ({ slot }) =
 
                             </div>
                             <div className="flex justify-between items-center mt-3">
-                                {slot.spotsLeft > 0 && <button className="bg-teal-700 text-white text-sm font-semibold py-2 px-4 rounded-full hover:bg-teal-800">
+                                {slot.spotsLeft > 0 && <button className="bg-teal-700 text-white text-sm font-semibold py-2 px-4 rounded-full hover:bg-teal-800 " onClick={() => handleDateSelect(slot)}>
                                     Choose Date
                                 </button>
                                 }

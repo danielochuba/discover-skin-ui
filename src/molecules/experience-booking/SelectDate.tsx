@@ -1,7 +1,11 @@
 import React from 'react';
 import BookingSelectDateCard from '@/components/cards/BookingSelectDateCard';
+interface BookDateSectionProps {
+    step: number;
+    setStep: React.Dispatch<React.SetStateAction<number>>;
+}
 
-const SelectDate: React.FC = () => {
+const SelectDate: React.FC<BookDateSectionProps> = ({ step, setStep }) => {
     const slots = [
         {
             date: "19",
@@ -33,7 +37,7 @@ const SelectDate: React.FC = () => {
             </div>
 
             {slots.map((slot, index) => (
-                <BookingSelectDateCard key={index} slot={slot} />
+                <BookingSelectDateCard key={index} slot={slot} step={step} setStep={setStep} />
             ))}
         </div>
     );

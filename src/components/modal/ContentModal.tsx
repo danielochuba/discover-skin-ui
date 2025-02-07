@@ -10,7 +10,7 @@ interface ContentModalProps {
 const ContentModal: React.FC<ContentModalProps> = ({ children, containerClassName, className = "", onClose }) => {
     return (
         <div
-            className={`fixed  flex items-end justify-center bg-black bg-opacity-50 ${containerClassName}`}
+            className={`fixed w-screen flex items-end justify-center bg-black bg-opacity-50 ${containerClassName}`}
             onClick={onClose} // Close when clicking outside modal
         >
             <div

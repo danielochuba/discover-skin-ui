@@ -1,5 +1,6 @@
 import ContentModal from '@/components/modal/ContentModal';
 import BookDateSection from '@/organisms/experience-booking/BookDateSection';
+import SelectPeopleSection from '@/organisms/experience-booking/SelectPeopleSection';
 import StepProgress from '@/organisms/experience-booking/StepProgress';
 import { goToTop } from '@/utils/util';
 import React, { useEffect, useState } from 'react';
@@ -14,11 +15,29 @@ const ExperienceBookingPage: React.FC = () => {
     }, []);
     return (
         <div className="">
-            <ContentModal className="!px-2 relative !overflow-y-auto" containerClassName='h-full b' onClose={() => { navigate(-1) }}>
+            <ContentModal className="!px-2 relative !overflow-y-auto" containerClassName='h-full ' onClose={() => { navigate(-1) }}>
                 <StepProgress currentStep={step} totalSteps={4} />
-                <div className='overflow-y-auto h-[75vh] scrollbar-hidden'>
-                    <BookDateSection />
-                </div>
+                {/* Step 1 */}
+                {step === 1 && (
+                    <div className='overflow-y-auto h-[80vh] scrollbar-hidden'>
+                        <BookDateSection />
+                    </div>
+                )}
+                {/* Step 2 */}
+                {step === 2 && (
+                    <div className=' h-[75vh] w-full flex flex-col'>
+                        <SelectPeopleSection />
+                        <button
+                            onClick={() => setStep((prev) => Math.min(prev + 1, 4))}
+                            type="submit"
+                            className="mt-4 w-[90%] bg-secondary mx-auto text-white font-semibold py-2 rounded-full hover:bg-green-600 transition disabled:bg-gray-400"
+
+                        >
+                            Continue
+                        </button>
+                    </div>
+                )}
+                {/* Step 3 */}
                 <button
                     onClick={() => setStep((prev) => Math.max(prev - 1, 1))}
                     className="px-4 py-2 bg-gray-400 text-white rounded"

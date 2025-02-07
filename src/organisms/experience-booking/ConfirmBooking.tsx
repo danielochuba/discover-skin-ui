@@ -4,9 +4,8 @@ import BookingConfirmation from '@/molecules/experience-booking/ConfirmBooking';
 
 const ConfirmBooking: React.FC = () => {
     return (
-        <div>
-            <BookingConfirmation />
-        </div>
+
+        <BookingConfirmation />
     );
 };
 

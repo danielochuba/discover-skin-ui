@@ -11,6 +11,7 @@ const ApplicationRoutes = {
     EXPERIENCES: {
         LIST: '/experiences',
         DETAIL: '/experiences/:id',
+        RESERVE: '/experiences/:id/reserve',
     }
 }
 

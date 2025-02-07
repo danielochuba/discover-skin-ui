@@ -4,6 +4,7 @@ import WelcomePageRoute from '@/pages/welcome-page/route';
 import { Outlet } from 'react-router-dom';
 import DashboardPageRoute from '@/pages/dashboard/route';
 import ExperienceDetailsPageRoute from '@/pages/experience-details/route';
+import ExperienceBookingPageRoute from '@/pages/experience-booking/route';
 export const allRoutes = [
     // guest routes
     //  WaitlistPageRoute,
@@ -11,6 +12,7 @@ export const allRoutes = [
     // dashboard routes
     DashboardPageRoute,
     ExperienceDetailsPageRoute,
+    ExperienceBookingPageRoute,
     {
         path: "/",
         element: (

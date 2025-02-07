@@ -9,12 +9,12 @@ interface StepProgressProps {
 
 const StepProgress: React.FC<StepProgressProps> = ({ currentStep, totalSteps }) => {
     return (
-        <div className="flex items-center w-full mb-3 justify-center">
+        <div className="flex  w-full mb-3 mx-2 ">
             {Array.from({ length: totalSteps }, (_, index) => (
                 <div key={index} className="flex items-center">
                     {/* Step circle */}
                     <div
-                        className={`w-8 h-8 flex items-center justify-center rounded-full ${index < currentStep
+                        className={`w-7 h-7 flex items-center justify-center rounded-full ${index < currentStep
                             ? "bg-white text-secondary"
                             : "bg-gray-200 text-gray-400"
                             }`}

@@ -3,13 +3,14 @@ import React from "react";
 interface ContentModalProps {
     children: React.ReactNode;
     className?: string;
+    containerClassName?: string;
     onClose?: () => void;
 }
 
-const ContentModal: React.FC<ContentModalProps> = ({ children, className = "", onClose }) => {
+const ContentModal: React.FC<ContentModalProps> = ({ children, containerClassName, className = "", onClose }) => {
     return (
         <div
-            className="fixed inset-0 flex items-end justify-center bg-black bg-opacity-50"
+            className={`fixed w-screen flex items-end justify-center bg-black bg-opacity-50 ${containerClassName}`}
             onClick={onClose} // Close when clicking outside modal
         >
             <div
@@ -20,7 +21,7 @@ const ContentModal: React.FC<ContentModalProps> = ({ children, className = "", o
                 {onClose && (
                     <button
                         onClick={onClose}
-                        className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+                        className="absolute top-7 right-5 text-2xl font-bold text-gray-500 hover:text-gray-700"
                     >
                         ✕
                     </button>

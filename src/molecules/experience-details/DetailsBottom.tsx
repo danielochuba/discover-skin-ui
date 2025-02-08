@@ -1,12 +1,25 @@
+import Button from '@/atom/Button';
+import ApplicationRoutes from '@/config/routes';
 import React from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 
 interface DetailsBottomProps {
     price: number;
     currency?: string;
-    onSeeAllDates: () => void;
 }
 
-const DetailsBottom: React.FC<DetailsBottomProps> = ({ price, currency = "$", onSeeAllDates }) => {
+const DetailsBottom: React.FC<DetailsBottomProps> = ({ price, currency = "$" }) => {
+
+    const { id } = useParams();
+    const navigate = useNavigate();
+
+    const onSeeAllDates = () => {
+        if (id) {
+            navigate(ApplicationRoutes.EXPERIENCES.RESERVE.replace(':id', id.toString()));
+        }
+        console.log("See all dates clicked", id);
+    }
+
     return (
         <div className="flex items-center justify-between p-4 bg-white border rounded-lg shadow-sm">
             <div>
@@ -15,12 +28,13 @@ const DetailsBottom: React.FC<DetailsBottomProps> = ({ price, currency = "$", on
                     {currency}{price} <span className="text-gray-500 font-normal text-sm">/ person</span>
                 </p>
             </div>
-            <button
-                onClick={onSeeAllDates}
-                className="bg-secondary text-white text-sm font-semibold py-2 px-4 rounded-full hover:bg-teal-800"
-            >
-                See all dates
-            </button>
+            <Button
+                label='See all dates'
+                handleClick={onSeeAllDates}
+                buttonClassName=" text-white text-sm font-semibold py-2 px-4 bg-transparent"
+                containerClassName='bg-secondary  hover:bg-teal-800 rounded-full'
+            />
+
         </div>
     );
 };

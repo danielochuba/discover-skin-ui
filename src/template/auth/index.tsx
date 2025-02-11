@@ -7,7 +7,7 @@ const AuthPage = ({ onClose }: { onClose: () => void }) => {
     const [isLogin, setIsLogin] = useState(true); // Track which page to show
 
     return (
-        <ContentModal className="w-96 h-[90vh]" onClose={onClose}>
+        <ContentModal className="w-96 h-[90vh] " containerClassName="fixed inset-0 flex items-end justify-center bg-black bg-opacity-50" onClose={onClose}>
             {isLogin ? <LogInPage /> : <SignUpPage />}
             <p className="text-sm text-gray-600 text-center mt-3">
                 {isLogin ? "New here? " : "Already have an account? "}
